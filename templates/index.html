@@ -8,7 +8,81 @@
 
 
 {% block body%} 
-<h1> From Template Inheritance </h1>
+<div class="container">
+    <div class="row">
+        <div class="col col-md-12">
+            <div class="jumbotron p-3">
+
+                <h2> Manage <b> Employees </b> <button type="button" class="btn btn-success float-right"
+                    data-toggle="modal" data-target="#mymodal"> Add New Employees </button></h2>
+
+                    <table class="table table-hover table-dark">
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                        <td>1</td>
+                        <td>Kimyasma</td>
+                        <td>kimyasma@mail.com</td>
+                        <td>+2348167030407</td>
+
+                        <td>
+                            <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit">Edit</a>
+                            <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are you to delete Employee ??')">Delete</a>
+
+
+
+                        </td>
+                    </table>
+                </div>
+
+                <!-- Modal -->
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="mymodal"> Add Employee </h5>
+         
+          </button>
+        </div>
+        <div class="modal-body">
+              <form action="" method="post">
+  
+                  <div class="form-group">
+  
+                      <label>Name:</label>
+                          <input type="text" class="form-control" name="name" required="1">
+                  </div>
+  
+                  <div class="form-group">
+  
+                      <label>Email:</label>
+                          <input type="email" class="form-control" name="Email" required="1">
+                  </div>
+  
+                  <div class="form-group">
+  
+                      <label>Phone:</label>
+                          <input type="number" class="form-control" name="Phone" required="1">
+                  </div>
+                  
+                  <div class="form-group">
+                      <button type="button" class="btn btn-primary"> Add Employee </button>
+                  </div>
+                  
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+    </div>
+</div>
 
 
 {%endblock%}
