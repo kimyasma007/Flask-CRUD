@@ -5,11 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 
-app = Flask (__name__)
-app.secret_key = "Kimyasma"
-
-
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -29,7 +24,6 @@ class Data(db.Model):
 
 with app.app_context():
     db.create_all()
-
 
 @app.route('/')
 def index ():
