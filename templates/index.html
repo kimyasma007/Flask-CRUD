@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-{% include 'header.html' %}
+{% extends 'base.html' %} 
+{% include 'header.html'%}
 
 
 
@@ -8,43 +8,27 @@
 
 
 {% block body%} 
+
 <div class="container">
     <div class="row">
-        <div class="col col-md-12">
+        <div class=" col md-12">
+
             <div class="jumbotron p-3">
 
-                <h2> Manage <b> Employees </b> <button type="button" class="btn btn-success float-right"
-                    data-toggle="modal" data-target="#mymodal"> Add New Employees </button>
-                </h2>
+                <h2>Manage <b>Employees</b> <button type="button" class="btn btn-success"></button></h2>
 
-                    <table class="table table-hover table-dark">
 
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Action</th>
-                        </tr>
-                        <td>1</td>
-                        <td>Kimyasma</td>
-                        <td>kimyasma@mail.com</td>
-                        <td>+2348167030407</td>
 
-                        <td>
-                            <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit">Edit</a>
-                            <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are you to delete Employee ??')">Delete</a>
 
-                        </td>
-                    </tr>
-         </table>
-</div>
+
+
+            </div>
+
+
+        </div>
+
+
     </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
 
-
+</div>
 {%endblock%}
