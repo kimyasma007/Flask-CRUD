@@ -1,9 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
-
-
-
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
@@ -26,7 +22,7 @@ with app.app_context():
     db.create_all()
 
 @app.route('/')
-def index ():
+def Index ():
     return render_template("index.html")
 
 @app.route('/insert', methods = ['POST'])
@@ -36,14 +32,13 @@ def insert():
         email = request.form['email']
         phone = request.form['phone']
 
-
         my_data = Data(name, email, phone)
         db.session.add(my_data)
         db.session.commit()
 
-        return redirect (url_for('Index'))
+        flash("Employee Inserted Successfully")
 
-
+        return redirect(url_for('Index'))
 
 if __name__ == "__main__":
     app.run(debug=True)
