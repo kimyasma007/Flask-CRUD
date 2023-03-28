@@ -24,7 +24,8 @@ with app.app_context():
 
 @app.route('/')
 def Index ():
-    return render_template("index.html")
+    all.data = Data.query.all()
+    return render_template("index.html", employee all_data)
 
 @app.route('/insert', methods = ['POST'])
 def insert():
