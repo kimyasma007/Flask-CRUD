@@ -23,11 +23,11 @@ with app.app_context():
     db.create_all()
 
 @app.route('/')
-def Index ():
-    all.data = Data.query.all()
-    return render_template("index.html", employee all_data)
+def Index():
+    all_data = Data.query.all()
+    return render_template("index.html", employees=all_data)
 
-@app.route('/insert', methods = ['POST'])
+@app.route('/insert', methods=['POST'])
 def insert():
     if request.method == 'POST':
         name = request.form['name']
