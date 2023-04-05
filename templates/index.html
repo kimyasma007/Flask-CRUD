@@ -107,10 +107,9 @@
 
 
                         <td>
-                            <a href="/update/{{employees.id}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editEmployeeModal{{employees.id}}">Edit</a>
+                          <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editEmployeeModal{{ employees.id }}">Edit</a>
 
-                            
-                            <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delet Employee???')">Delet</a>
+                          <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delet Employee???')">Delet</a>
 
                             
 
@@ -132,40 +131,31 @@
 
             </div>
 <!-- Modal Edit Eployee -->
-<div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editEmployeeModal{{employeesall_data}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="mymodal"> Update Employee </h5>
       </div>
       <div class="modal-body">
-            <form action="" method="post">
-
-                <div class="form-group">
-
-                    <label>Name:</label>
-                    <input type="hidden" name="id" value="id">
-
-                        <input type="text" class="form-control" name="Name" value="{{employees.name}}">
-                </div>
-
-                <div class="form-group">
-
-                    <label>Email:</label>
-                        <input type="text" class="form-control" name="Email" value="{{employees.email}}">
-                </div>
-
-                <div class="form-group">
-
-                    <label>Phone:</label>
-                        <input type="number" class="form-control" name="Phone" value="{{employees.phone}}">
-                </div>
-                
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary"> Update </button>
-                </div>
-                
-            </form>
+           <form action="{{ url_for('update') }}" method="post">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="hidden" name="id" value="{{ employees.id }}">
+        <input type="text" class="form-control" name="Name" value="{{ employees.name }}">
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="text" class="form-control" name="Email" value="{{ employees.email }}">
+    </div>
+    <div class="form-group">
+        <label>Phone:</label>
+        <input type="number" class="form-control" name="Phone" value="{{ employees.phone }}">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -27,6 +27,7 @@ def Index():
     all_data = Data.query.all()
     return render_template("index.html", employees=all_data)
 
+
 @app.route('/insert', methods=['POST'])
 def insert():
     if request.method == 'POST':
@@ -42,5 +43,22 @@ def insert():
     
     return redirect(url_for('Index'))
 
+
+@app.route('/update', methods=['GET, POST'])
+def update():
+    if request.method == 'POST':
+        # retrieve the data from the database using the id
+        all_data = Data.query.get(request.form.get(id))
+
+        # update the data
+    all_data.name = request.form['name']
+    all_data.email = request.form['email']
+    all_data.phone = request.form['phone']
+
+        # commit the changes to the database
+    db.session.commit()
+    flash("Employee Update Succesfully")
+
+    return redirect(url_for('Index'))
 if __name__ == "__main__":
     app.run(debug=True)
